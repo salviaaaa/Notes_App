@@ -1,0 +1,99 @@
+:root[data-theme="default"] {
+  --primary-color: #4C585B;
+  --secondary-color: #7E99A3;
+  --accent-color: #A5BFCC;
+  --text-color: #4C585B;
+  --background-color: #F4EDD3;
+}
+
+:root[data-theme="retro"] {
+  --primary-color: #7E99A3;
+  --secondary-color: #A5BFCC;
+  --accent-color: #F4EDD3;
+  --text-color: #4C585B;
+  --background-color: #F4EDD3;
+}
+
+:root[data-theme="cyberpunk"] {
+  --primary-color: #A5BFCC;
+  --secondary-color: #F4EDD3;
+  --accent-color: #4C585B;
+  --text-color: #4C585B;
+  --background-color: #F4EDD3;
+}
+
+:root[data-theme="valentine"] {
+  --primary-color: #F4EDD3;
+  --secondary-color: #4C585B;
+  --accent-color: #7E99A3;
+  --text-color: #4C585B;
+  --background-color: #F4EDD3;
+}
+
+:root[data-theme="aqua"] {
+  --primary-color: #4C585B;
+  --secondary-color: #A5BFCC;
+  --accent-color: #7E99A3;
+  --text-color: #4C585B;
+  --background-color: #F4EDD3;
+}
+
+:root[data-theme="navy-elegance"] {
+  --primary-color: #F5EFE7;
+  --secondary-color: #D8C4B6;
+  --accent-color: #3E5879;
+  --text-color: #F5EFE7;
+  --background-color: #213555;
+  --note-bg: #3E5879;
+  --note-border: #F5EFE7;
+  --note-shadow: rgba(245, 239, 231, 0.2);
+  --quote-bg: rgba(245, 239, 231, 0.1);
+}
+
+:root[data-theme="ocean-breeze"] {
+  --primary-color: #F5EFE7;
+  --secondary-color: #D8C4B6;
+  --accent-color: #213555;
+  --text-color: #F5EFE7;
+  --background-color: #3E5879;
+  --note-bg: #213555;
+  --note-border: #F5EFE7;
+  --note-shadow: rgba(245, 239, 231, 0.2);
+  --quote-bg: rgba(245, 239, 231, 0.1);
+}
+
+:root[data-theme="desert-sand"] {
+  --primary-color: #213555;
+  --secondary-color: #3E5879;
+  --accent-color: #213555;
+  --text-color: #213555;
+  --background-color: #F5EFE7;
+  --note-bg: #ffffff;
+  --note-border: #213555;
+  --note-shadow: rgba(33, 53, 85, 0.2);
+  --quote-bg: rgba(33, 53, 85, 0.1);
+}
+
+:root[data-theme="warm-vanilla"] {
+  --primary-color: #213555;
+  --secondary-color: #3E5879;
+  --accent-color: #213555;
+  --text-color: #213555;
+  --background-color: #F5EFE7;
+  --note-bg: #ffffff;
+  --note-border: #213555;
+  --note-shadow: rgba(33, 53, 85, 0.2);
+  --quote-bg: rgba(33, 53, 85, 0.1);
+}
+
+:root[data-theme="midnight-blue"] {
+  --primary-color: #F5EFE7;
+  --secondary-color: #D8C4B6;
+  --accent-color: #3E5879;
+  --text-color: #F5EFE7;
+  --background-color: #213555;
+  --note-bg: #3E5879;
+  --note-border: #F5EFE7;
+  --note-shadow: rgba(245, 239, 231, 0.2);
+  --quote-bg: rgba(245, 239, 231, 0.1);
+} 

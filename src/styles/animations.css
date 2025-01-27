@@ -1,0 +1,116 @@
+/* Import font handwriting */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Dancing+Script:wght@700&display=swap');
+
+/* Animasi intro */
+.intro-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  z-index: 1000;
+}
+
+.app-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4.5rem;
+  color: var(--primary-color);
+  position: relative;
+  opacity: 0;
+  animation: letteringAnimation 3s forwards;
+}
+
+@keyframes letteringAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.app-title::before {
+  display: none;
+}
+
+.slide-right {
+  animation: slideRight 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+/* Animasi quotes dan mascot */
+.quote-container {
+  position: relative;
+  text-align: center;
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 600px;
+  background-color: var(--quote-bg);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  border: 1px solid var(--note-border);
+  box-shadow: 0 4px 6px var(--note-shadow);
+}
+
+.mascot-container {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 10;
+}
+
+.quote-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.quote-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  line-height: 1.4;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+} 
