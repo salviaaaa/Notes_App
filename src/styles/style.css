@@ -39,6 +39,8 @@ body {
   border-radius: 4px;
   background-color: var(--background-color);
   color: var(--text-color);
+  font-weight: 500 !important;
+  border-width: 2px !important;
 }
 
 .note-input textarea {
@@ -46,13 +48,21 @@ body {
 }
 
 .note-input button {
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
+  background-color: #4CAF50 !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px 24px;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: bold !important;
+  transition: all 0.3s ease;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.note-input button:hover {
+  background-color: #388E3C !important;
 }
 
 .notes-list {
@@ -135,12 +145,17 @@ body {
   border-radius: 4px;
   background-color: var(--background-color);
   color: var(--text-color);
+  font-weight: 500 !important;
+  border-width: 2px !important;
 }
 
 .note-input__title__char-limit {
-  font-size: 0.8em;
-  color: #666;
-  margin-bottom: 4px;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  color: var(--primary-color) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 8px !important;
 }
 
 .notes-list__empty-message {
@@ -174,7 +189,8 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600 !important;
+  border-width: 2px !important;
 }
 
 .theme-selector select:hover {
@@ -200,22 +216,6 @@ textarea::placeholder {
   width: 100%;
   margin-bottom: 10px;
   font-size: 1rem;
-}
-
-.note-input button {
-  background-color: var(--accent-color);
-  color: var(--background-color);
-  border: 1px solid var(--note-border);
-  padding: 12px 24px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  font-size: 1.1em;
-}
-
-.note-input button:hover {
-  opacity: 0.9;
 }
 
 /* Headings */

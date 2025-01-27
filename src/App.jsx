@@ -6,6 +6,7 @@ import NoteList from './components/NoteList';
 import NoteInput from './components/NoteInput';
 import SearchBar from './components/SearchBar';
 import { getInitialData } from './utils';
+import SuccessPopup from './components/SuccessPopup';
 
 const quotes = [
   "The only way to do great work is to love what you do. - Steve Jobs",
@@ -36,6 +37,7 @@ const App = () => {
   const [currentTheme, setCurrentTheme] = useState('default');
   const [showApp, setShowApp] = useState(false);
   const [currentQuote, setCurrentQuote] = useState(quotes[0]);
+  const [alert, setAlert] = useState({ show: false, message: '', type: '' });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -79,11 +81,18 @@ const App = () => {
   const toggleArchive = (id) => {
     const updatedNotes = notes.map(note => {
       if (note.id === id) {
-        return { ...note, archived: !note.archived };
+        const newStatus = !note.archived;
+        setAlert({
+          show: true,
+          message: `Note ${newStatus ? 'archived' : 'unarchived'} successfully!`,
+          type: newStatus ? 'archive' : 'unarchive'
+        });
+        return { ...note, archived: newStatus };
       }
       return note;
     });
     setNotes(updatedNotes);
+    setTimeout(() => setAlert({ show: false, message: '', type: '' }), 3000);
   };
 
   const filteredNotes = notes.filter(note => 
@@ -95,6 +104,12 @@ const App = () => {
       ...prevNotes,
       { id: +new Date(), ...newNote, archived: false, createdAt: new Date().toISOString() },
     ]);
+    setAlert({
+      show: true,
+      message: 'Note added successfully!',
+      type: 'success'
+    });
+    setTimeout(() => setAlert({ show: false, message: '', type: '' }), 3000);
   };
 
   return (
@@ -112,11 +127,10 @@ const App = () => {
               value={currentTheme} 
               onChange={(e) => handleThemeChange(e.target.value)}
             >
-              <option value="navy-elegance">Navy Elegance</option>
-              <option value="ocean-breeze">Ocean Breeze</option>
-              <option value="desert-sand">Desert Sand</option>
-              <option value="warm-vanilla">Warm Vanilla</option>
-              <option value="midnight-blue">Midnight Blue</option>
+              <option value="default">Default</option>
+              <option value="midnight-elegance">Midnight Elegance</option>
+              <option value="sage-garden">Sage Garden</option>
+              <option value="forest-mist">Forest Mist</option>
             </select>
           </div>
           
@@ -138,6 +152,12 @@ const App = () => {
             onArchive={toggleArchive}
           />
         </div>
+      )}
+      {alert.show && (
+        <SuccessPopup 
+          message={alert.message}
+          type={alert.type}
+        />
       )}
     </>
   );

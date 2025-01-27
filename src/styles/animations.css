@@ -70,13 +70,12 @@
   position: relative;
   text-align: center;
   margin: 20px auto;
-  padding: 30px;
-  max-width: 600px;
-  background-color: var(--quote-bg);
-  backdrop-filter: blur(5px);
-  border-radius: 15px;
-  border: 1px solid var(--note-border);
-  box-shadow: 0 4px 6px var(--note-shadow);
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 1200px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .mascot-container {
@@ -102,9 +101,9 @@
   font-family: 'Caveat', cursive;
   font-size: 1.8rem;
   font-style: italic;
-  color: var(--text-color);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
+  color: var(--primary-color);
+  text-shadow: none;
+  margin: 0;
   line-height: 1.4;
 }
 
@@ -113,4 +112,268 @@
   10% { opacity: 1; transform: translateY(0); }
   90% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Pop-up styling */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.popup-content h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.popup-content p {
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.popup-content img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.popup-buttons button {
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.popup-buttons button:first-child {
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+}
+
+.popup-buttons button:first-child:hover {
+  background-color: #e5e5e5;
+}
+
+.popup-buttons button:last-child {
+  background-color: #ff5252;
+  color: white;
+  border: none;
+}
+
+.popup-buttons button:last-child:hover {
+  background-color: #ff0000;
+}
+
+/* Party animation for success */
+@keyframes confetti {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-color);
+  animation: confetti 1s ease-out forwards;
+}
+
+/* Success popup styling */
+.success-popup {
+  position: relative;
+  padding: 40px !important;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0) !important;
+}
+
+.success-popup h2 {
+  color: #2c3e50 !important;
+  font-weight: 700 !important;
+  font-size: 1.8rem !important;
+  margin: 20px 0 !important;
+}
+
+.success-icon {
+  width: 100px !important;
+  height: 100px !important;
+  margin-bottom: 20px !important;
+  animation: scaleIn 0.5s ease-out !important;
+}
+
+.success-checkmark {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 50px;
+  height: 50px;
+  background: #4CAF50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Memperkuat kontras teks */
+.note-item__title {
+  font-weight: 700 !important;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1) !important;
+}
+
+.note-item__date {
+  font-weight: 600 !important;
+}
+
+.note-item__body {
+  font-weight: 500 !important;
+}
+
+.note-input__title__char-limit {
+  font-weight: 600 !important;
+  color: var(--primary-color) !important;
+}
+
+/* Memperkuat border */
+.note-item {
+  border-width: 2px !important;
+}
+
+/* Memperkuat heading */
+.note-app h1,
+.note-app h2 {
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Alert notifications */
+.alert {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 15px 25px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transform: translateX(120%);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1000;
+}
+
+.alert.show {
+  transform: translateX(0);
+}
+
+.alert-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.alert p {
+  color: #2c3e50;
+  font-weight: 500;
+  margin: 0;
+}
+
+.alert-success {
+  border-left: 4px solid #4CAF50;
+}
+
+.alert-archive {
+  border-left: 4px solid #2196F3;
+}
+
+.alert-unarchive {
+  border-left: 4px solid #FF9800;
+}
+
+.alert-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #eee;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+
+.alert-progress::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--primary-color);
+  animation: progress 3s linear;
+}
+
+@keyframes progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* Button styling yang konsisten */
+.note-item__delete-button {
+  background-color: #ff5252 !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 600 !important;
+}
+
+.note-item__archive-button {
+  background-color: #4CAF50 !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 600 !important;
+}
+
+.note-item__delete-button:hover {
+  background-color: #ff0000 !important;
+}
+
+.note-item__archive-button:hover {
+  background-color: #388E3C !important;
 } 
